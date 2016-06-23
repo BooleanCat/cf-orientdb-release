@@ -1,0 +1,5 @@
+check process orientdb
+    with pidfile ...
+    start program "/var/vcap/jobs/orientdb/bin/orientdb_ctl start"
+    stop program "/var/vcap/jobs/orientdb/bin/orientdb_ctl stop"
+    group vcap

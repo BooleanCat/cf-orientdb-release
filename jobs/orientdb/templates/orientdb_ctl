@@ -1,0 +1,11 @@
+#!/bin/bash
+
+ORIENTDB_DIR=/var/vcap/packages/orientdb
+
+case $1 in
+
+    start)
+        $ORIENTDB_DIR/bin/orientdb.sh start
+
+    stop)
+        $ORIENTDB_DIR/bin/orientdb.sh stop

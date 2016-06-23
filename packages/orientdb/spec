@@ -1,0 +1,7 @@
+---
+name: orientdb
+
+dependencies: []
+
+files:
+- orientdb/orientdb-community-2.2.3.tar.gz # http://mkt.orientdb.com/CE-223-linux

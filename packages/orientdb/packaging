@@ -1,0 +1,8 @@
+set -e
+
+tar -C $BOSH_INSTALL_TARGET \
+    -xzf orientdb/orientdb-community-2.2.3.tar.gz \
+    --strip-components 1
+
+# Remove unused Windows bat files
+rm $BOSH_INSTALL_TARGET/bin/*.bat
