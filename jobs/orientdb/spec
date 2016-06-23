@@ -1,5 +1,6 @@
 ---
 name: orientdb
 templates:
+    orientdb_ctl: bin/orientdb_ctl
 
 packages:
