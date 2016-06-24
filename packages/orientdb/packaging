@@ -6,3 +6,5 @@ tar -C $BOSH_INSTALL_TARGET \
 
 # Remove unused Windows bat files
 rm $BOSH_INSTALL_TARGET/bin/*.bat
+sed -i 's/ORIENTDB_DIR=\".*\"/ORIENTDB_DIR=\/var\/vcap\/packages\/orientdb/' $BOSH_INSTALL_TARGET/bin/orientdb.sh
+sed -i 's/ORIENTDB_USER=\".*\"/ORIENTDB_USER=root/' $BOSH_INSTALL_TARGET/bin/orientdb.sh

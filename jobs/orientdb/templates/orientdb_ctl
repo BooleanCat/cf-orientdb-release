@@ -1,11 +1,23 @@
 #!/bin/bash
 
-ORIENTDB_DIR=/var/vcap/packages/orientdb
+export ORIENTDB_HOME=/var/vcap/packages/orientdb
+export JAVA_HOME=/var/vcap/packages/java
 
 case $1 in
 
     start)
-        $ORIENTDB_DIR/bin/orientdb.sh start
+        $ORIENTDB_HOME/bin/orientdb.sh start
+        ;;
 
     stop)
-        $ORIENTDB_DIR/bin/orientdb.sh stop
+        $ORIENTDB_HOME/bin/orientdb.sh stop
+        ;;
+
+    status)
+        $ORIENTDB_HOME/bin/orientdb.sh status
+        ;;
+
+    *)
+        echo "Usage: orientdb_ctl {start|stop|status}"
+        ;;
+esac

@@ -1,0 +1,5 @@
+set -e
+
+tar -C $BOSH_INSTALL_TARGET \
+    -xzf java/jre-8u91-linux-x64.tar.gz \
+    --strip-components 1

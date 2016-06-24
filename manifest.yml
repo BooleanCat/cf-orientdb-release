@@ -1,0 +1,45 @@
+name: cf-orientdb
+director_uuid: 93c01d2d-a2a5-49d8-8d02-389fd223a9cf
+releases:
+- name: cf-orientdb
+  version: latest
+networks:
+- name: default
+  subnets:
+  - cloud_properties:
+      name: cf-orientdb
+    range: 10.244.3.0/29
+    reserved:
+    - 10.244.3.1
+    static:
+    - 10.244.3.2
+    - 10.244.3.3
+resource_pools:
+- name: default
+  cloud_properties:
+    ram: 512
+    name: cf-orientdb
+  network: default
+  stemcell:
+    name: bosh-warden-boshlite-ubuntu-trusty-go_agent
+    version: latest
+jobs:
+- name: orientdb
+  instances: 1
+  templates:
+  - name: orientdb
+    release: cf-orientdb
+  resource_pool: default
+  networks:
+  - name: default
+    static_ips:
+    - 10.244.3.2
+  persistent_disk: 2048
+compilation:
+  workers: 1
+  network: default
+update:
+  canaries: 0
+  max_in_flight: 3
+  canary_watch_time: 30000-180000
+  update_watch_time: 30000-180000

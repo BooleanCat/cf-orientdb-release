@@ -1,0 +1,5 @@
+---
+name: java
+
+files:
+- java/jre-8u91-linux-x64.tar.gz  # http://javadl.oracle.com/webapps/download/AutoDL?BundleId=207765
